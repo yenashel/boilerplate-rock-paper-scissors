@@ -2,14 +2,14 @@
 # #and plays whatever the opponent played two plays ago. 
 # It is not a very good player so you will need to change the code to pass the challenge.
 
-#from collections import defaultdict
-#from operator import itemgetter
 
 def player(prev_opponent_play, opponent_history=[], series_dict = {}, play_counter_list=[0]):
     #count number of plays
     play_counter_list[0] += 1 #This hack is for preserving state between plays
     play_counter = play_counter_list[0]
     opponent_history.append(prev_opponent_play)
+    
+    #this is redundant information due to the opponent_history but I did not want to fiddle around with the indexes to much as it is already complicated enough to follow
     opponents_last_play = ''
     last_two_plays = ''
     last_three_plays = ''
